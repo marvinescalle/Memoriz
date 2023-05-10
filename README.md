@@ -18,6 +18,10 @@ Le projet a été réalisé par Escalle Marvin & Hernandez Valentin
 - Cartes: Créez une catégorie, ensuite un thème et enfin une carte de révision basée sur la catégorie et théme choisi.
 - Quizz: Essayez de mémoriser les réponses aux questions sur vos cartes, une fois terminé vous aurez le score. 
 
+## Technologies utilisées
+
+Vue.js 3, Js, Ts, Json, Html, Css, Vuetify, Workbox, Pinia, Vue-router...
+
 ## Installation et utilisation
 
 Assurez-vous d'avoir [Node.js](https://nodejs.org/) et [npm](https://www.npmjs.com/) installés sur votre machine.
