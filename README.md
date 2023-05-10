@@ -38,3 +38,5 @@ npm install
 npm run dev 
 
 npm run build
+
+## si lors du npm run dev la page charge indéfiniment, veuillez changer de port en utilisant 'npm run dev -- --port 5178' ou autre
