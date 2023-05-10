@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memo-riz</title>
+  <script type="module" crossorigin src="/assets/index.c96e1530.js"></script>
+  <link rel="stylesheet" href="/assets/index.dc433feb.css">
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+
+<body>
+    <div id="app"></div>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker
+              .register('/sw.js')
+              .then((registration) => {
+                console.log('Service Worker enregistré avec succès :', registration);
+              })
+              .catch((error) => {
+                console.log('Erreur lors de l\'enregistrement du Service Worker :', error);
+              });
+          });
+        }
+      </script>
+</body>
+
+</html>
