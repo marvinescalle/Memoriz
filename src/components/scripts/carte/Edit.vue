@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
 
-import Dropzone from "@/components/Dropzone.vue"
+import Depos from "@/components/Depos.vue"
 import { useCarteStore } from "@/store/cartes"
 import { useFfmpegStore } from "@/store/ffmpeg"
 import { useThemeStore } from "@/store/theme"
@@ -235,7 +235,7 @@ watch(
                 variant="outlined"
               />
               <div :class="`dropzone-container ${rectoType === 'Fichier' ? 'active' : ''}`">
-                <Dropzone
+                <Depos
                   @file-change="($file) => onMediaChange('recto', $file)"
                   :error="showError && (convertingType === 'recto' || !rectoMedia)"
                   :disabled="!!convertingType"
@@ -282,7 +282,7 @@ watch(
                 variant="outlined"
               />
               <div :class="`dropzone-container ${versoType === 'Fichier' ? 'active' : ''}`">
-                <Dropzone
+                <Depos
                   @file-change="($file) => onMediaChange('verso', $file)"
                   :disabled="!!convertingType"
                   :disabled-text="

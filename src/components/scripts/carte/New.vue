@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
 
-import Dropzone from "@/components/Dropzone.vue"
+import Depos from "@/components/Depos.vue"
 import Carte from "@/models/carte"
 import { useCarteStore } from "@/store/cartes"
 import { useFfmpegStore } from "@/store/ffmpeg"
@@ -178,7 +178,7 @@ watch(
             >
               Recto
             </h6>
-            <v-select
+            <v-autocomplete
               label="Type"
               :items="['Texte', 'Fichier']"
               variant="outlined"
@@ -191,20 +191,20 @@ watch(
                   showError
                     ? rectoType === 'Texte'
                       ? !rectoContent
-                        ? 'Content is required'
+                        ? 'Content est obligatoire'
                         : ''
                       : convertingType === 'recto'
                       ? 'Wait for conversion'
                       : !rectoMedia
-                      ? 'Fichier is required'
+                      ? 'Fichier est obligatoire'
                       : ''
                     : ''
                 "
                 label="Recto"
                 variant="outlined"
               />
-              <div :class="`dropzone-container ${rectoType === 'Fichier' ? 'active' : ''}`">
-                <Dropzone
+              <div :class="`depos-container ${rectoType === 'Fichier' ? 'active' : ''}`">
+                <Depos
                   @file-change="($file) => onMediaChange('recto', $file)"
                   :error="showError && (convertingType === 'recto' || !rectoMedia)"
                   :disabled="!!convertingType"
@@ -225,7 +225,7 @@ watch(
             >
               Verso
             </h6>
-            <v-select
+            <v-autocomplete
               label="Type"
               :items="['Texte', 'Fichier']"
               variant="outlined"
@@ -238,20 +238,20 @@ watch(
                   showError
                     ? versoType === 'Texte'
                       ? !versoContent
-                        ? 'Content is required'
+                        ? 'Content est obligatoire'
                         : ''
                       : convertingType === 'verso'
                       ? 'Wait for conversion'
                       : !versoMedia
-                      ? 'Fichier is required'
+                      ? 'Fichier est obligatoire'
                       : ''
                     : ''
                 "
                 label="Verso"
                 variant="outlined"
               />
-              <div :class="`dropzone-container ${versoType === 'Fichier' ? 'active' : ''}`">
-                <Dropzone
+              <div :class="`depos-container ${versoType === 'Fichier' ? 'active' : ''}`">
+                <Depos
                   @file-change="($file) => onMediaChange('verso', $file)"
                   :error="showError && (convertingType === 'verso' || !versoMedia)"
                   :disabled="!!convertingType"
@@ -295,7 +295,7 @@ watch(
     flex: 1;
     .carte-content {
       position: relative;
-      .dropzone-container {
+      .depos-container {
         position: absolute;
         top: 0;
         left: 0;

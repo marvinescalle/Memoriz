@@ -5,7 +5,7 @@ import { computed, onMounted, ref } from "vue"
 import carte from "@/models/carte"
 import Categorie from "@/models/categorie"
 import Theme from "@/models/theme"
-import { CartesByCategorie } from "@/types/cartes"
+import { CartesByCategorie } from "@/typescript/types/cartes"
 
 export const useCarteStore = defineStore("carte", () => {
   const loadingRef = ref(true)

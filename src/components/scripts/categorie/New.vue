@@ -51,7 +51,7 @@ watch([titleRef], () => {
         <v-form>
           <v-text-field
             v-model="titleRef"
-            :error-messages="showError ? 'Title is required' : ''"
+            :error-messages="showError ? 'Title est obligatoire' : ''"
             label="Titre *"
             required
             variant="outlined"
